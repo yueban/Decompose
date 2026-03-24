@@ -37,3 +37,23 @@ A set of custom detekt rules that help you avoid critical mistakes when working 
 Link: [github.com/AJIEKCX/decompose-detekt-rules](https://github.com/AJIEKCX/decompose-detekt-rules)
 
 Author: [@AJIEKCX](https://github.com/AJIEKCX)
+
+### Decompose Plugin for Claude Code
+
+A Claude Code plugin that provides production best practices for Decompose.
+
+#### What You Get
+
+- **1 slash command** for scanning and fixing Decompose setup across all platforms
+- **3 auto-invoked skills** that activate automatically when Claude detects you're working with Decompose
+- **A `CLAUDE.md` template** to paste into any Decompose project for always-on guidance
+
+#### Installation
+```
+/plugin marketplace add Litun/DecomposeClaudePlugin
+/plugin install decompose@Litun-DecomposeClaudePlugin
+```
+
+Link: [github.com/Litun/DecomposeClaudePlugin](https://github.com/Litun/DecomposeClaudePlugin)
+
+Author: [@Litun](https://github.com/Litun)
