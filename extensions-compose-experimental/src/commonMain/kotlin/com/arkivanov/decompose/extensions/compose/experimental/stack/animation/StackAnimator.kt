@@ -44,6 +44,27 @@ fun stackAnimator(
     )
 
 /**
+ * Inverts child widgets animation direction as follows:
+ * - [Direction.ENTER_FRONT] -> [Direction.ENTER_BACK]
+ * - [Direction.EXIT_FRONT] -> [Direction.EXIT_BACK]
+ * - [Direction.ENTER_BACK] -> [Direction.ENTER_FRONT]
+ * - [Direction.EXIT_BACK] -> [Direction.EXIT_FRONT]
+ * @return the inverted [StackAnimator]
+ */
+@ExperimentalDecomposeApi
+fun StackAnimator.inverted(): StackAnimator =
+    StackAnimator { direction ->
+        animate(
+            direction = when (direction) {
+                Direction.ENTER_FRONT -> Direction.ENTER_BACK
+                Direction.EXIT_FRONT -> Direction.EXIT_BACK
+                Direction.ENTER_BACK -> Direction.ENTER_FRONT
+                Direction.EXIT_BACK -> Direction.EXIT_FRONT
+            },
+        )
+    }
+
+/**
  * Combines (merges) the receiver [StackAnimator] with the [other] [StackAnimator].
  */
 @ExperimentalDecomposeApi

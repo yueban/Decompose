@@ -9,6 +9,8 @@ import com.arkivanov.decompose.ExperimentalDecomposeApi
 
 /**
  * A simple sliding animation. Children enter from one side and exit to another side.
+ *
+ * You can also invert sliding direction applying [StackAnimator.inverted]
  */
 @ExperimentalDecomposeApi
 fun slide(

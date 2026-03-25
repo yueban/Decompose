@@ -99,6 +99,7 @@ public abstract interface class com/arkivanov/decompose/extensions/compose/exper
 }
 
 public final class com/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimatorKt {
+	public static final fun inverted (Lcom/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimator;)Lcom/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimator;
 	public static final fun plus (Lcom/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimator;Lcom/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimator;)Lcom/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimator;
 	public static final fun stackAnimator (Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function4;)Lcom/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimator;
 	public static synthetic fun stackAnimator$default (Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function4;ILjava/lang/Object;)Lcom/arkivanov/decompose/extensions/compose/experimental/stack/animation/StackAnimator;
