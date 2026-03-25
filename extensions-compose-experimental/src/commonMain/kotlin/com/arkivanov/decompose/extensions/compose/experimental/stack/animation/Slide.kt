@@ -14,31 +14,28 @@ import com.arkivanov.decompose.ExperimentalDecomposeApi
 fun slide(
     animationSpec: FiniteAnimationSpec<Float> = tween(),
     orientation: Orientation = Orientation.Horizontal,
-    reverseDirection: Boolean = false,
 ): StackAnimator =
     stackAnimator(animationSpec = animationSpec) { factor, _ ->
         when (orientation) {
-            Orientation.Horizontal -> Modifier.offsetXFactor(factor = factor, reverseDirection = reverseDirection)
-            Orientation.Vertical -> Modifier.offsetYFactor(factor = factor, reverseDirection = reverseDirection)
+            Orientation.Horizontal -> Modifier.offsetXFactor(factor)
+            Orientation.Vertical -> Modifier.offsetYFactor(factor)
         }
     }
 
-private fun Modifier.offsetXFactor(factor: Float, reverseDirection: Boolean): Modifier =
+private fun Modifier.offsetXFactor(factor: Float): Modifier =
     layout { measurable, constraints ->
         val placeable = measurable.measure(constraints)
 
         layout(placeable.width, placeable.height) {
-            val x = placeable.width.toFloat() * if (reverseDirection) -factor else factor
-            placeable.placeRelative(x = x.toInt(), y = 0)
+            placeable.placeRelative(x = (placeable.width.toFloat() * factor).toInt(), y = 0)
         }
     }
 
-private fun Modifier.offsetYFactor(factor: Float, reverseDirection: Boolean): Modifier =
+private fun Modifier.offsetYFactor(factor: Float): Modifier =
     layout { measurable, constraints ->
         val placeable = measurable.measure(constraints)
 
         layout(placeable.width, placeable.height) {
-            val y = placeable.height.toFloat() * if (reverseDirection) -factor else factor
-            placeable.placeRelative(x = 0, y = y.toInt())
+            placeable.placeRelative(x = 0, y = (placeable.height.toFloat() * factor).toInt())
         }
     }
