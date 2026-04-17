@@ -1,5 +1,13 @@
 This page contains links to various useful projects related to Decompose and maintained by the community.
 
+### KMP - NavBuilder
+
+A Kotlin Multiplatform annotation processing library that generates type-safe navigation infrastructure at compile time. Built on top of Decompose and KSP, KMP-NavBuilder eliminates navigation boilerplate by generating configs, factories, and composable renderers from simple annotations.
+
+Link: [github.com/neilSayok/kmp-navbuilder](https://github.com/neilSayok/kmp-navbuilder)
+
+Author: [@neilSayok](https://github.com/neilSayok)
+
 ### Decompose-Router
 
 A Compose-multiplatform navigation library that leverage Decompose to create an API inspired by [Conductor](https://github.com/bluelinelabs/Conductor).
