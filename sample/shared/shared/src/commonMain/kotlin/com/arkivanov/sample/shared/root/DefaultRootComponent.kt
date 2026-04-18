@@ -109,7 +109,6 @@ class DefaultRootComponent(
                 SharedTransitionsChild(
                     DefaultSharedTransitionsComponent(
                         componentContext = componentContext,
-                        deepLinkUrl = config.deepLinkUrl,
                         onFinished = nav::pop,
                     )
                 )

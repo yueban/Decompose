@@ -16,6 +16,7 @@ import com.arkivanov.sample.shared.painterResource
 fun SharedTransitionScope.ThumbnailContent(
     component: ThumbnailComponent,
     animatedVisibilityScope: AnimatedVisibilityScope,
+    enableSharedElement: Boolean,
     modifier: Modifier = Modifier,
 ) {
     Image(
@@ -23,9 +24,15 @@ fun SharedTransitionScope.ThumbnailContent(
         contentDescription = null,
         modifier = modifier
             .aspectRatio(1F)
-            .sharedBounds(
-                sharedContentState = rememberSharedContentState(key = component.image.id),
-                animatedVisibilityScope = animatedVisibilityScope,
+            .then(
+                if (enableSharedElement) {
+                    Modifier.sharedBounds(
+                        sharedContentState = rememberSharedContentState(key = component.image.id),
+                        animatedVisibilityScope = animatedVisibilityScope,
+                    )
+                } else {
+                    Modifier
+                }
             )
             .clickable(onClick = component::onClicked),
         contentScale = ContentScale.Crop,
